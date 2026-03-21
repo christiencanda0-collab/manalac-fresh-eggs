@@ -4,78 +4,242 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manalac's Fresh Eggs | Order Online</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #fffde7; margin: 0; padding: 0; }
-        .header { background: #fbc02d; color: #333; padding: 40px 20px; text-align: center; border-bottom: 5px solid #f9a825; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .container { max-width: 800px; margin: 20px auto; background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
-        
-        .egg-types { display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 20px; }
-        .egg-card { background: #fffde7; border: 2px solid #fff176; padding: 15px; border-radius: 12px; width: 28%; text-align: center; margin-bottom: 15px; transition: transform 0.2s; box-sizing: border-box; }
-        .egg-card:hover { transform: translateY(-5px); border-color: #fbc02d; }
-        .egg-card h3 { color: #e65100; margin: 5px 0; font-size: 1.1em; }
-        .egg-card p { color: #795548; font-size: 0.9em; margin: 5px 0; }
-        .price { color: #d32f2f; font-size: 1.4em; font-weight: bold; margin: 10px 0; display: block; }
-        
-        .order-section { text-align: center; margin-top: 30px; }
-        h2 { color: #5d4037; border-bottom: 3px solid #fbc02d; display: inline-block; padding-bottom: 8px; margin-bottom: 20px; }
-        
-        iframe { width: 100%; height: 900px; border: none; border-radius: 10px; background-color: #fafafa; margin-top: 20px; }
-        .footer { text-align: center; padding: 30px; font-size: 0.9em; color: #8d6e63; background: #fffde7; }
-        
+        :root {
+            --primary-orange: #f39c12;
+            --secondary-yellow: #f1c40f;
+            --dark-text: #2c3e50;
+            --light-bg: #fdfaf0;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-bg);
+            margin: 0;
+            padding: 0;
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        /* Header section with gradient */
+        header {
+            background: linear-gradient(135deg, var(--primary-orange), var(--secondary-yellow));
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+
+        /* Container for content */
+        .container {
+            max-width: 1100px;
+            margin: -40px auto 40px;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background: var(--primary-orange);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Pricing Cards Grid */
+        .pricing-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .price-box {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 35px 25px;
+            flex: 1 1 280px;
+            max-width: 320px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Hover effect: Card jumps up and glows */
+        .price-box:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 40px rgba(243, 156, 18, 0.2);
+            border: 2px solid var(--primary-orange);
+        }
+
+        .price-box h3 {
+            color: var(--primary-orange);
+            font-size: 1.4rem;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .price-box p.subtext {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--dark-text);
+        }
+
+        .unit {
+            font-size: 0.9rem;
+            color: #95a5a6;
+            font-weight: 400;
+        }
+
+        /* Order Form Section */
+        .order-section {
+            background: var(--white);
+            border-radius: 25px;
+            padding: 40px 20px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .order-section h2 {
+            margin-bottom: 10px;
+        }
+
+        .delivery-note {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        /* Responsive Iframe */
+        .iframe-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 120%; /* Height for mobile */
+        }
+
+        @media (min-width: 768px) {
+            .iframe-container {
+                padding-top: 800px; /* Fixed height for desktop */
+            }
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #bdc3c7;
+            font-size: 0.8rem;
+        }
+
+        /* Smooth stacking for mobile */
         @media (max-width: 600px) {
-            .egg-card { width: 90%; margin-bottom: 20px; }
+            header h1 { font-size: 1.8rem; }
+            .container { margin-top: -20px; }
+            .price-box { flex: 1 1 100%; }
         }
     </style>
 </head>
 <body>
 
-<div class="header">
-    <h1>🥚 Manalac's Fresh Eggs</h1>
-    <p style="font-size: 1.2em;">Fresh, Quality, and Affordable Eggs for your Family!</p>
-</div>
+    <header>
+        <h1>🥚 Manalac's Fresh Eggs</h1>
+        <p>Fresh, Quality, and Affordable Eggs for your Family!</p>
+    </header>
 
-<div class="container">
-    <div class="order-section">
-        <h2>Pricing & Sizes</h2>
-        <div class="egg-types">
-            <div class="egg-card">
+    <div class="container">
+        <div class="section-title">Pricing & Sizes</div>
+        <div class="pricing-grid">
+            <div class="price-box">
                 <h3>Small (PW)</h3>
-                <p>Daily Fresh</p>
-                <span class="price">₱5.00</span>
-                <p style="font-size: 0.8em; color: #999;">per piece</p>
+                <p class="subtext">Daily Fresh</p>
+                <div class="price">₱5.00 <span class="unit">per piece</span></div>
             </div>
-            
-            <div class="egg-card">
-                <h3>Extra Small</h3>
-                <p>Great Value</p>
-                <span class="price">₱7.00</span>
-                <p style="font-size: 0.8em; color: #999;">per piece</p>
-            </div>
-            
-            <div class="egg-card">
-                <h3>Medium</h3>
-                <p>Customer's Choice</p>
-                <span class="price">₱9.00</span>
-                <p style="font-size: 0.8em; color: #999;">per piece</p>
-            </div>
-        </div>
 
-        <div style="margin-top: 30px; padding: 15px; background: #e8f5e9; border-radius: 10px; color: #2e7d32; font-weight: bold;">
-            🚚 We deliver within the area! Place your order below.
+            <div class="price-box">
+                <h3>Extra Small</h3>
+                <p class="subtext">Great Value</p>
+                <div class="price">₱7.00 <span class="unit">per piece</span></div>
+            </div>
+
+            <div class="price-box">
+                <h3>Medium</h3>
+                <p class="subtext">Customer's Choice</p>
+                <div class="price">₱9.00 <span class="unit">per piece</span></div>
+            </div>
         </div>
 
         <div class="order-section">
-            <h2>📦 Place Your Order</h2>
+            <h2 class="section-title">Place Your Order</h2>
+            <div class="delivery-note">🚚 We deliver within the area! Place your order below.</div>
+            
             <p>Please fill out the form below. We will contact you shortly to confirm.</p>
             
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf1HXAREce_g4_2t_I2RuC8xdGfetzTKtOcgyD7-BM1blKXVA/viewform?embedded=true">Loading…</iframe>
+            <div class="iframe-container">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScyB-Y83-A-h87jH3UfH979MvG6fI0X_6Gz_X6_EXAMPLE/viewform?embedded=true">
+                    Loading…
+                </iframe>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="footer">
-    <p>© 2026 Manalac's Fresh Eggs | Proudly Developed by Christien Canda</p>
-</div>
+    <footer>
+        &copy; 2026 Manalac's Fresh Eggs | Automated Order System by Christien
+    </footer>
 
 </body>
 </html>
