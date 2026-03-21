@@ -26,7 +26,6 @@
             line-height: 1.6;
         }
 
-        /* Header section with gradient */
         header {
             background: linear-gradient(135deg, var(--primary-orange), var(--secondary-yellow));
             padding: 60px 20px;
@@ -48,7 +47,6 @@
             margin-top: 10px;
         }
 
-        /* Container for content */
         .container {
             max-width: 1100px;
             margin: -40px auto 40px;
@@ -61,6 +59,7 @@
             font-weight: 600;
             position: relative;
             padding-bottom: 10px;
+            font-size: 1.5rem;
         }
 
         .section-title::after {
@@ -74,7 +73,6 @@
             transform: translateX(-50%);
         }
 
-        /* Pricing Cards Grid */
         .pricing-grid {
             display: flex;
             flex-wrap: wrap;
@@ -93,12 +91,8 @@
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
             border: 2px solid transparent;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
 
-        /* Hover effect: Card jumps up and glows */
         .price-box:hover {
             transform: translateY(-12px);
             box-shadow: 0 15px 40px rgba(243, 156, 18, 0.2);
@@ -110,13 +104,6 @@
             font-size: 1.4rem;
             margin: 0 0 10px 0;
             text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .price-box p.subtext {
-            font-size: 0.9rem;
-            color: #7f8c8d;
-            margin-bottom: 15px;
         }
 
         .price {
@@ -131,17 +118,12 @@
             font-weight: 400;
         }
 
-        /* Order Form Section */
         .order-section {
             background: var(--white);
             border-radius: 25px;
             padding: 40px 20px;
             box-shadow: var(--shadow);
             text-align: center;
-        }
-
-        .order-section h2 {
-            margin-bottom: 10px;
         }
 
         .delivery-note {
@@ -155,42 +137,34 @@
             font-weight: 500;
         }
 
-        /* Responsive Iframe */
+        /* Responsive Iframe Container */
         .iframe-container {
             position: relative;
-            overflow: hidden;
             width: 100%;
-            padding-top: 120%; /* Height for mobile */
-        }
-
-        @media (min-width: 768px) {
-            .iframe-container {
-                padding-top: 800px; /* Fixed height for desktop */
-            }
+            height: 900px; /* Mas mataas para kasya ang buong form */
+            overflow: hidden;
+            border-radius: 15px;
+            border: 1px solid #eee;
         }
 
         iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             border: none;
-            border-radius: 15px;
         }
 
         footer {
             text-align: center;
             padding: 40px 20px;
-            color: #bdc3c7;
-            font-size: 0.8rem;
+            color: #7f8c8d;
+            font-size: 0.9rem;
         }
 
-        /* Smooth stacking for mobile */
         @media (max-width: 600px) {
             header h1 { font-size: 1.8rem; }
             .container { margin-top: -20px; }
             .price-box { flex: 1 1 100%; }
+            .iframe-container { height: 1100px; } /* Mas mataas sa mobile */
         }
     </style>
 </head>
@@ -206,19 +180,16 @@
         <div class="pricing-grid">
             <div class="price-box">
                 <h3>Small (PW)</h3>
-                <p class="subtext">Daily Fresh</p>
                 <div class="price">₱5.00 <span class="unit">per piece</span></div>
             </div>
 
             <div class="price-box">
                 <h3>Extra Small</h3>
-                <p class="subtext">Great Value</p>
                 <div class="price">₱7.00 <span class="unit">per piece</span></div>
             </div>
 
             <div class="price-box">
                 <h3>Medium</h3>
-                <p class="subtext">Customer's Choice</p>
                 <div class="price">₱9.00 <span class="unit">per piece</span></div>
             </div>
         </div>
@@ -226,8 +197,6 @@
         <div class="order-section">
             <h2 class="section-title">Place Your Order</h2>
             <div class="delivery-note">🚚 We deliver within the area! Place your order below.</div>
-            
-            <p>Please fill out the form below. We will contact you shortly to confirm.</p>
             
             <div class="iframe-container">
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScyB-Y83-A-h87jH3UfH979MvG6fI0X_6Gz_X6_EXAMPLE/viewform?embedded=true">
@@ -238,7 +207,7 @@
     </div>
 
     <footer>
-        &copy; 2026 Manalac's Fresh Eggs | Automated Order System by Christien
+        &copy; 2026 Manalac's Fresh Eggs | Developed by Christien
     </footer>
 
 </body>
