@@ -11,12 +11,13 @@
             --dark-brown: #2c3e50;
             --bg-cream: #fdfaf5;
             --white: #ffffff;
+            --success-green: #2e7d32;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-cream);
             color: var(--dark-brown);
             line-height: 1.6;
@@ -29,78 +30,104 @@
             text-align: center;
             border-bottom-left-radius: 50px;
             border-bottom-right-radius: 50px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
         .container { max-width: 1100px; margin: -30px auto 50px; padding: 20px; }
 
-        .notice-bar {
-            background: #fff3e0;
-            color: #e65100;
+        /* FREE DELIVERY BANNER */
+        .promo-banner {
+            background: var(--success-green);
+            color: white;
             text-align: center;
             padding: 15px;
             border-radius: 15px;
             margin-bottom: 30px;
             font-weight: bold;
-            border: 1px solid #ffe0b2;
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.2);
+            font-size: 1.1rem;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin: 40px 0 20px;
             color: var(--secondary-orange);
+            font-weight: bold;
         }
 
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
         .price-box {
             background: white;
-            padding: 30px;
-            border-radius: 25px;
+            padding: 35px 25px;
+            border-radius: 30px;
             text-align: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: 0.3s;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
             border: 1px solid #eee;
             position: relative;
         }
 
-        .price-box:hover { transform: translateY(-10px); border-color: var(--primary-orange); }
+        .price-box:hover { 
+            transform: translateY(-10px); 
+            border-color: var(--primary-orange);
+            box-shadow: 0 15px 35px rgba(243, 156, 18, 0.15);
+        }
 
         .badge {
             position: absolute;
-            top: 15px;
-            right: 15px;
-            padding: 5px 12px;
+            top: 20px;
+            right: 20px;
+            padding: 6px 15px;
             border-radius: 20px;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             font-weight: bold;
+            text-transform: uppercase;
         }
 
-        .icon { font-size: 3.5rem; margin-bottom: 10px; }
+        .icon { font-size: 4rem; margin-bottom: 15px; }
 
-        .price { font-size: 2.5rem; font-weight: 800; color: var(--primary-orange); }
+        .price { 
+            font-size: 3rem; 
+            font-weight: 800; 
+            color: var(--primary-orange); 
+            margin: 10px 0; 
+        }
+
+        .save-tag {
+            color: var(--success-green);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
 
         .order-section {
             background: white;
-            padding: 40px;
-            border-radius: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            margin-top: 50px;
+            padding: 50px 25px;
+            border-radius: 40px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+            margin-top: 60px;
         }
 
         .iframe-container {
             position: relative;
             width: 100%;
-            padding-top: 150%;
+            padding-top: 150%; /* Adjusted for Google Forms */
         }
 
         .iframe-container iframe {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%; border: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px;
+            color: #95a5a6;
         }
     </style>
 </head>
@@ -108,67 +135,75 @@
 
     <header>
         <h1>🥚 Manalac's Fresh Eggs</h1>
-        <p>Fresh Quality Eggs | Case & Tray Wholesale</p>
+        <p>Fresh Quality Eggs Delivered to Your Doorstep</p>
     </header>
 
     <div class="container">
-        <div class="notice-bar">
-            📢 MINIMUM ORDER: 2 Cases or 1 Tray for Delivery!
+        <div class="promo-banner">
+            🚚 FREE DELIVERY on all Case & Tray orders! (Min. 1 Case or Tray)
         </div>
 
-        <div class="section-title">Available Sizes</div>
+        <div class="section-title">Wholesale Pricing</div>
         
         <div class="pricing-grid">
             <div class="price-box">
-                <span class="badge" style="background: #f1f2f6;">12 PIECES</span>
+                <span class="badge" style="background: #f1f2f6; color: #57606f;">12 PIECES</span>
                 <div class="icon">📦</div>
                 <h3>Small (Case)</h3>
                 <div class="price">₱60.00</div>
+                <p style="color: #7f8c8d;">₱5.00 per piece</p>
             </div>
-            <div class="price-box" style="border: 2px solid #2e7d32;">
-                <span class="badge" style="background: #2e7d32; color: white;">30 PIECES</span>
+            <div class="price-box" style="border: 2px solid var(--success-green);">
+                <span class="badge" style="background: var(--success-green); color: white;">30 PIECES</span>
                 <div class="icon">🧺</div>
                 <h3>Small (Tray)</h3>
                 <div class="price">₱145.00</div>
+                <p class="save-tag">SAVE ₱5.00!</p>
             </div>
 
             <div class="price-box">
-                <span class="badge" style="background: #f1f2f6;">12 PIECES</span>
+                <span class="badge" style="background: #f1f2f6; color: #57606f;">12 PIECES</span>
                 <div class="icon">📦</div>
                 <h3>XS (Case)</h3>
                 <div class="price">₱84.00</div>
+                <p style="color: #7f8c8d;">₱7.00 per piece</p>
             </div>
             <div class="price-box" style="border: 2px solid var(--primary-orange);">
                 <span class="badge" style="background: var(--primary-orange); color: white;">30 PIECES</span>
                 <div class="icon">🧺</div>
                 <h3>XS (Tray)</h3>
                 <div class="price">₱200.00</div>
+                <p class="save-tag">SAVE ₱10.00!</p>
             </div>
 
             <div class="price-box">
-                <span class="badge" style="background: #f1f2f6;">12 PIECES</span>
+                <span class="badge" style="background: #f1f2f6; color: #57606f;">12 PIECES</span>
                 <div class="icon">📦</div>
                 <h3>Medium (Case)</h3>
                 <div class="price">₱108.00</div>
+                <p style="color: #7f8c8d;">₱9.00 per piece</p>
             </div>
             <div class="price-box" style="border: 2px solid #d35400;">
                 <span class="badge" style="background: #d35400; color: white;">30 PIECES</span>
                 <div class="icon">🧺</div>
                 <h3>Medium (Tray)</h3>
                 <div class="price">₱260.00</div>
+                <p class="save-tag">SAVE ₱10.00!</p>
             </div>
         </div>
 
         <div class="order-section">
             <h2 class="section-title">Order Form</h2>
             <div class="iframe-container">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf1HXAREce_g4_2t_I2RuC8xdGfetzTKtOcgyD7-BM1blKXVA/viewform?embedded=true">Loading…</iframe>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf1HXAREce_g4_2t_I2RuC8xdGfetzTKtOcgyD7-BM1blKXVA/viewform?embedded=true">
+                    Loading…
+                </iframe>
             </div>
         </div>
     </div>
 
-    <footer style="text-align: center; padding: 40px; color: #95a5a6;">
-        &copy; 2026 Manalac's Fresh Eggs
+    <footer>
+        &copy; 2026 Manalac's Fresh Eggs | Quality Egg Supply
     </footer>
 
 </body>
