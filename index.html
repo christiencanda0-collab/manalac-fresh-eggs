@@ -37,31 +37,24 @@
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.5);
             text-align: center;
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .logo-circle {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             background: var(--accent-gradient);
             border-radius: 50%;
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            font-size: 35px;
+            font-size: 30px;
             color: white;
             margin-bottom: 15px;
-            box-shadow: 0 10px 20px rgba(255, 159, 67, 0.3);
         }
 
         h1 {
             font-weight: 700;
-            font-size: 24px;
+            font-size: 22px;
             margin: 0;
             background: var(--accent-gradient);
             -webkit-background-clip: text;
@@ -69,12 +62,12 @@
         }
 
         .tagline {
-            font-size: 13px;
+            font-size: 12px;
             color: #636e72;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
-        /* Price Table Styling */
+        /* Updated Price Table Section */
         .price-section {
             background: rgba(255, 255, 255, 0.6);
             border-radius: 20px;
@@ -89,13 +82,12 @@
             margin-bottom: 10px;
             color: #ff6b6b;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .price-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 13px;
+            font-size: 12px;
         }
 
         .price-table th {
@@ -105,46 +97,30 @@
         }
 
         .price-table td {
-            padding: 10px 8px;
+            padding: 10px 5px;
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
-        .size-label { font-weight: 600; color: #2d3436; }
+        .size-label { font-weight: 600; text-align: left; }
         .price-val { color: #10ac84; font-weight: 700; }
+        .small-txt { font-size: 10px; color: #636e72; font-weight: normal; }
 
-        .price-note {
-            font-size: 9px;
-            color: #b2bec3;
-            margin-top: 10px;
-            font-style: italic;
-        }
-
-        /* Order Button */
         .order-btn {
             display: block;
             background: var(--accent-gradient);
             color: white;
             text-decoration: none;
-            padding: 18px;
+            padding: 16px;
             border-radius: 15px;
             font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s ease;
+            font-size: 15px;
+            transition: 0.3s;
             box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
-            text-transform: uppercase;
         }
 
-        .order-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(255, 107, 107, 0.4);
-        }
+        .order-btn:hover { transform: translateY(-2px); }
 
-        .footer-text {
-            margin-top: 20px;
-            font-size: 10px;
-            color: #95a5a6;
-            letter-spacing: 1px;
-        }
+        .footer-text { margin-top: 15px; font-size: 9px; color: #95a5a6; }
     </style>
 </head>
 <body>
@@ -155,7 +131,7 @@
         <div class="tagline">Premium Farm-to-Table Experience</div>
 
         <div class="price-section">
-            <h3>Current Price List</h3>
+            <h3>Standard Price List</h3>
             <table class="price-table">
                 <thead>
                     <tr>
@@ -166,31 +142,30 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="size-label">XS</td>
-                        <td class="price-val">₱180</td>
-                        <td class="price-val">₱2,100</td>
+                        <td class="size-label">XS <br><span class="small-txt">₱5.00/pc</span></td>
+                        <td class="price-val">₱150</td>
+                        <td class="price-val">₱1,800</td>
                     </tr>
                     <tr>
-                        <td class="size-label">Small</td>
-                        <td class="price-val">₱195</td>
-                        <td class="price-val">₱2,300</td>
-                    </tr>
-                    <tr>
-                        <td class="size-label">Medium</td>
+                        <td class="size-label">Small <br><span class="small-txt">₱7.00/pc</span></td>
                         <td class="price-val">₱210</td>
-                        <td class="price-val">₱2,500</td>
+                        <td class="price-val">₱2,520</td>
+                    </tr>
+                    <tr>
+                        <td class="size-label">Medium <br><span class="small-txt">₱9.00/pc</span></td>
+                        <td class="price-val">₱270</td>
+                        <td class="price-val">₱3,240</td>
                     </tr>
                 </tbody>
             </table>
-            <div class="price-note">*Prices are subject to change based on market rates.</div>
         </div>
 
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1HXAREce_g4_2t_I2RuC8xdGfetzTKtOcgyD7-BM1blKXVA/viewform?usp=header" class="order-btn">
-            Place Order Now
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1HXAREce_g4_2t_I2RuC8xdGfetzTKtOcgyD7-BM1blKXVA/viewform" class="order-btn">
+            PLACE ORDER NOW
         </a>
 
         <div class="footer-text">
-            SECURE CLOUD ORDERING SYSTEM
+            BUILT BY MANALAC DIGITAL SOLUTIONS
         </div>
     </div>
 
