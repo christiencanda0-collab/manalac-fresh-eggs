@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manalac's Fresh Eggs | Order System</title>
+    <title>Manalac's Fresh Eggs | Premium Ordering</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #ff9f43;
             --secondary-color: #ee5253;
-            --glass-bg: rgba(255, 255, 255, 0.9);
+            --glass-bg: rgba(255, 255, 255, 0.92);
             --accent-gradient: linear-gradient(135deg, #ff9f43 0%, #ff6b6b 100%);
         }
 
         body {
             font-family: 'Poppins', sans-serif;
-            /* Background image ng farm/eggs para sa premium feel */
             background: url('https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
             background-size: cover;
             margin: 0;
@@ -24,123 +23,127 @@
             align-items: center;
             min-height: 100vh;
             color: #2d3436;
+            padding: 20px;
         }
 
-        /* Glassmorphism Effect */
         .container {
             background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 28px;
-            padding: 45px 35px;
-            width: 90%;
-            max-width: 420px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 30px;
+            padding: 35px 25px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.5);
             text-align: center;
-            animation: slideUp 0.8s ease-out;
+            animation: fadeIn 0.8s ease-out;
         }
 
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .logo-circle {
-            width: 90px;
-            height: 90px;
+            width: 70px;
+            height: 70px;
             background: var(--accent-gradient);
             border-radius: 50%;
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            font-size: 45px;
+            font-size: 35px;
             color: white;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 20px rgba(255, 159, 67, 0.4);
+            margin-bottom: 15px;
+            box-shadow: 0 10px 20px rgba(255, 159, 67, 0.3);
         }
 
         h1 {
             font-weight: 700;
-            font-size: 28px;
+            font-size: 24px;
             margin: 0;
             background: var(--accent-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: -0.5px;
         }
 
         .tagline {
-            font-size: 14px;
+            font-size: 13px;
             color: #636e72;
-            margin-top: 5px;
-            margin-bottom: 35px;
-            font-weight: 400;
+            margin-bottom: 25px;
         }
 
-        .feature-grid {
-            text-align: left;
-            margin-bottom: 40px;
-            padding: 0;
-            list-style: none;
+        /* Price Table Styling */
+        .price-section {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            padding: 15px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
-        .feature-grid li {
-            margin: 15px 0;
+        .price-section h3 {
             font-size: 14px;
-            display: flex;
-            align-items: center;
-            color: #444;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #ff6b6b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .feature-grid li::before {
-            content: "✓";
-            color: white;
-            font-weight: bold;
-            margin-right: 12px;
-            background: #10ac84;
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 11px;
-            flex-shrink: 0;
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
         }
 
-        /* Order Button Styling */
+        .price-table th {
+            padding: 8px;
+            border-bottom: 2px solid #fab1a0;
+            color: #2d3436;
+        }
+
+        .price-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .size-label { font-weight: 600; color: #2d3436; }
+        .price-val { color: #10ac84; font-weight: 700; }
+
+        .price-note {
+            font-size: 9px;
+            color: #b2bec3;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Order Button */
         .order-btn {
             display: block;
             background: var(--accent-gradient);
             color: white;
             text-decoration: none;
-            padding: 20px 30px;
-            border-radius: 18px;
+            padding: 18px;
+            border-radius: 15px;
             font-weight: 600;
-            font-size: 18px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 12px 24px rgba(255, 107, 107, 0.35);
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .order-btn:hover {
-            transform: translateY(-5px) scale(1.03);
-            box-shadow: 0 18px 30px rgba(255, 107, 107, 0.45);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(255, 107, 107, 0.4);
         }
 
-        .order-btn:active {
-            transform: scale(0.97);
-        }
-
-        .brand-footer {
-            margin-top: 30px;
+        .footer-text {
+            margin-top: 20px;
             font-size: 10px;
-            color: #b2bec3;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: 600;
+            color: #95a5a6;
+            letter-spacing: 1px;
         }
     </style>
 </head>
@@ -151,19 +154,43 @@
         <h1>Manalac's Fresh Eggs</h1>
         <div class="tagline">Premium Farm-to-Table Experience</div>
 
-        <ul class="feature-grid">
-            <li><strong>Automated:</strong> Real-time order tracking</li>
-            <li><strong>Fresh:</strong> Picked and delivered daily</li>
-            <li><strong>Secure:</strong> 11-digit verified contact system</li>
-            <li><strong>Fast:</strong> 1-click mobile ordering</li>
-        </ul>
+        <div class="price-section">
+            <h3>Current Price List</h3>
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Size</th>
+                        <th>Tray (30s)</th>
+                        <th>Case (360s)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="size-label">XS</td>
+                        <td class="price-val">₱180</td>
+                        <td class="price-val">₱2,100</td>
+                    </tr>
+                    <tr>
+                        <td class="size-label">Small</td>
+                        <td class="price-val">₱195</td>
+                        <td class="price-val">₱2,300</td>
+                    </tr>
+                    <tr>
+                        <td class="size-label">Medium</td>
+                        <td class="price-val">₱210</td>
+                        <td class="price-val">₱2,500</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="price-note">*Prices are subject to change based on market rates.</div>
+        </div>
 
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1HXAREce_g4_2t_I2RuC8xdGfetzTKtOcgyD7-BM1blKXVA/viewform?usp=header" class="order-btn">
             Place Order Now
         </a>
 
-        <div class="brand-footer">
-            Built by Manalac Digital Solutions
+        <div class="footer-text">
+            SECURE CLOUD ORDERING SYSTEM
         </div>
     </div>
 
